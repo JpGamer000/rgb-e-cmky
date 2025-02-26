@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site sobre RGB e CMYK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-top: 50px;
+            color: #333;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .slider {
+            width: 300px;
+            margin: 10px 0;
+        }
+        
+        .color-display {
+            width: 300px;
+            height: 100px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .description {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px 0;
+            text-align: justify;
+        }
+
+        .rgb-values, .cmyk-values {
+            font-weight: bold;
+        }
+
+        .examples {
+            margin-top: 30px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .example-box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .example-text {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aprenda sobre Cores RGB e CMYK</h1>
+
+    <div class="description">
+        <h2>Modelo RGB (Aditivo)</h2>
+        <p>O modelo de cor RGB (Red, Green, Blue) é um modelo aditivo de cores, utilizado em monitores e outros dispositivos digitais. 
+        A mistura de diferentes intensidades de luz vermelha, verde e azul pode criar uma ampla gama de cores. A intensidade de cada 
+        cor pode ser variada de 0 a 255, sendo 0 a ausência de cor e 255 a intensidade máxima.</p>
+
+        <h2>Como os Pixels Funcionam no Modelo RGB?</h2>
+        <p>Em telas de dispositivos digitais, como monitores e celulares, cada <strong>pixel</strong> é formado por três pequenos subpixels: 
+        um vermelho (R), um verde (G) e um azul (B). Esses subpixels emitem luz em diferentes intensidades, e a combinação dessas intensidades 
+        cria a cor final que vemos na tela.</p>
+
+        <h2>Modelo CMYK (Subtrativo)</h2>
+        <p>O modelo de cor CMYK (Ciano, Magenta, Amarelo e Preto) é utilizado em impressão, onde os pigmentos de tinta são combinados para 
+        criar cores. Diferente do modelo RGB, que é aditivo (adiciona luz), o modelo CMYK é subtrativo, o que significa que as cores são criadas 
+        pela subtração de luz. Em CMYK, a cor preta (K) é usada para melhorar o contraste e reduzir o desperdício de tinta, já que as tintas 
+        ciano, magenta e amarelo não são capazes de produzir um preto perfeito sozinhas.</p>
+    </div>
+
+    <div class="container">
+        <p><strong>Experimente misturar as cores RGB:</strong></p>
+        
+        <label for="red">Vermelho (R):</label>
+        <input type="range" id="red" class="slider" min="0" max="255" value="0">
+        <span id="red-value">0</span>
+
+        <br>
+
+        <label for="green">Verde (G):</label>
+        <input type="range" id="green" class="slider" min="0" max="255" value="0">
+        <span id="green-value">0</span>
+
+        <br>
+
+        <label for="blue">Azul (B):</label>
+        <input type="range" id="blue" class="slider" min="0" max="255" value="0">
+        <span id="blue-value">0</span>
+
+        <div class="color-display" id="color-display"></div>
+
+        <p class="rgb-values" id="rgb-values">RGB(0, 0, 0)</p>
+    </div>
+
+    <div class="container">
+        <p><strong>Experimente misturar as cores CMYK:</strong></p>
+        
+        <label for="cyan">Ciano (C):</label>
+        <input type="range" id="cyan" class="slider" min="0" max="100" value="0">
+        <span id="cyan-value">0</span>
+
+        <br>
+
+        <label for="magenta">Magenta (M):</label>
+        <input type="range" id="magenta" class="slider" min="0" max="100" value="0">
+        <span id="magenta-value">0</span>
+
+        <br>
+
+        <label for="yellow">Amarelo (Y):</label>
+        <input type="range" id="yellow" class="slider" min="0" max="100" value="0">
+        <span id="yellow-value">0</span>
+
+        <br>
+
+        <label for="black">Preto (K):</label>
+        <input type="range" id="black" class="slider" min="0" max="100" value="0">
+        <span id="black-value">0</span>
+
+        <div class="color-display" id="color-display-cmyk"></div>
+
+        <p class="cmyk-values" id="cmyk-values">CMYK(0, 0, 0, 0)</p>
+    </div>
+
+    <div class="examples">
+        <h3>Exemplos de Cores RGB</h3>
+        <div style="background-color: rgb(255, 0, 0);" class="example-box"></div>
+        <p class="example-text">RGB(255, 0, 0) - Vermelho</p>
+
+        <div style="background-color: rgb(0, 255, 0);" class="example-box"></div>
+        <p class="example-text">RGB(0, 255, 0) - Verde</p>
+
+        <div style="background-color: rgb(0, 0, 255);" class="example-box"></div>
+        <p class="example-text">RGB(0, 0, 255) - Azul</p>
+
+         <h2>Padrões de cores RGB e CMYK</h2>
+         <img src="https://imprensa.ufc.br/wp-content/uploads/2018/09/rgb-cmyk.jpg" alt="padrôes de cores cmky e rgb">
+
+         <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fimprensa.ufc.br%2Fpt%2Fduvidas-frequentes%2Fpadrao-de-cor-rgb-e-cmyk%2F&psig=AOvVaw0lUtLdATGivxGez8nCf4YU&ust=1740668336520000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKj3hILN4YsDFQAAAAAdAAAAABAE">Padrões de cores RGB e CMYK</a>
+    </div>
+
+    <script>
+        const redSlider = document.getElementById('red');
+        const greenSlider = document.getElementById('green');
+        const blueSlider = document.getElementById('blue');
+        const cyanSlider = document.getElementById('cyan');
+        const magentaSlider = document.getElementById('magenta');
+        const yellowSlider = document.getElementById('yellow');
+        const blackSlider = document.getElementById('black');
+        
+        const redValue = document.getElementById('red-value');
+        const greenValue = document.getElementById('green-value');
+        const blueValue = document.getElementById('blue-value');
+        
+        const cyanValue = document.getElementById('cyan-value');
+        const magentaValue = document.getElementById('magenta-value');
+        const yellowValue = document.getElementById('yellow-value');
+        const blackValue = document.getElementById('black-value');
+        
+        const colorDisplay = document.getElementById('color-display');
+        const rgbValuesText = document.getElementById('rgb-values');
+
+        const colorDisplayCMYK = document.getElementById('color-display-cmyk');
+        const cmykValuesText = document.getElementById('cmyk-values');
+        
+        function updateRGBColor() {
+            const r = redSlider.value;
+            const g = greenSlider.value;
+            const b = blueSlider.value;
+
+            redValue.textContent = r;
+            greenValue.textContent = g;
+            blueValue.textContent = b;
+
+            colorDisplay.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            rgbValuesText.textContent = `RGB(${r}, ${g}, ${b})`;
+        }
+
+        function updateCMYKColor() {
+            const c = cyanSlider.value;
+            const m = magentaSlider.value;
+            const y = yellowSlider.value;
+            const k = blackSlider.value;
+
+            cyanValue.textContent = c;
+            magentaValue.textContent = m;
+            yellowValue.textContent = y;
+            blackValue.textContent = k;
+
+            // Cores CMYK não podem ser diretamente aplicadas em RGB, mas vamos usar um exemplo visual básico
+            colorDisplayCMYK.style.backgroundColor = `rgb(${100 - c}%, ${100 - m}%, ${100 - y}%)`;
+
+            cmykValuesText.textContent = `CMYK(${c}%, ${m}%, ${y}%, ${k}%)`;
+        }
+
+        redSlider.addEventListener('input', updateRGBColor);
+        greenSlider.addEventListener('input', updateRGBColor);
+        blueSlider.addEventListener('input', updateRGBColor);
+
+        cyanSlider.addEventListener('input', updateCMYKColor);
+        magentaSlider.addEventListener('input', updateCMYKColor);
+        yellowSlider.addEventListener('input', updateCMYKColor);
+        blackSlider.addEventListener('input', updateCMYKColor);
+
+        updateRGBColor();
+        updateCMYKColor();
+    </script>
+
+</body>
+</html>
